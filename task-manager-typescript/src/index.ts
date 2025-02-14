@@ -18,4 +18,14 @@ function addTask(name: string): void {
     name: name,
     completed: false,
   };
+
+  tasks.push(newTask);
+  console.log(`Tarea añadida: ${newTask.name}`);
 }
+
+//Añadir tarea de prueba
+addTask("Aprender Typescript");
+addTask("Dormir, por favor");
+
+// mostrar todas las tareas
+console.log("Lista de tareas:", tasks);
