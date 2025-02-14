@@ -32,3 +32,18 @@ function completeTask(id) {
 completeTask(1);
 //Mostrar todas las tareas actualizadas
 console.log("Lista de tareas actualizadas:", tasks);
+// Función para eliminar una tarea por su ID
+function deleteTask(id) {
+    const taskIndex = tasks.findIndex((t) => t.id === id);
+    if (taskIndex !== -1) {
+        const deletedTask = tasks.splice(taskIndex, 1);
+        console.log(`Tarea eliminada: ${deletedTask[0].name}`);
+    }
+    else {
+        console.log(`Tarea con ID ${id} no encontrada.`);
+    }
+}
+// Probar la función para eliminar la tarea con ID 2
+deleteTask(2);
+// Mostrar las tareas restantes
+console.log("Lista de tareas después de eliminar:", tasks);
