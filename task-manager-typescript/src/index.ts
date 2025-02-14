@@ -10,3 +10,12 @@ interface Task {
 
 // Array para almacenar las tareas
 let tasks: Task[] = [];
+
+// Función para añadir uan nueva tarea
+function addTask(name: string): void {
+  const newTask: Task = {
+    id: tasks.length + 1,
+    name: name,
+    completed: false,
+  };
+}
