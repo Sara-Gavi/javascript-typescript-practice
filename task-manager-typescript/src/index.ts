@@ -87,8 +87,10 @@ function deleteTask(id: number): void {
   }
 }
 
-// Probar la función para eliminar la tarea con ID 2
+// Probar las funciones
+addTask("Entrenar");
+completeTask(1);
 deleteTask(2);
 
 // Mostrar las tareas restantes
-console.log("Lista de tareas después de eliminar:", tasks);
+console.log("Lista final de tareas:", tasks);
