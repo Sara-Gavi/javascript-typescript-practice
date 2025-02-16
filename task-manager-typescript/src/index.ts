@@ -45,6 +45,7 @@ function addTask(name: string): void {
 
   tasks.push(newTask);
   console.log(`Tarea añadida: ${newTask.name}`);
+  saveTasks(); // Guardar las tareas cada vez que añadimos una nueva
 }
 
 //Añadir tarea de prueba
