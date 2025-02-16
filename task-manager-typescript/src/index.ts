@@ -26,6 +26,12 @@ function loadTasks(): void {
   }
 }
 
+//Función para guardar las tareas en el archivo tasks.json
+function saveTasks(): void {
+  fs.writeFileSync("tasks.json", JSON.stringify(tasks, null, 2)); //convierte tasks a JSON y lo guarda
+  console.log("tareas guardadas en tasks.json");
+}
+
 // Función para añadir uan nueva tarea
 function addTask(name: string): void {
   const newTask: Task = {
