@@ -1,3 +1,5 @@
+import * as fs from "fs"; //Importar el módulo fs para leer y escribir en archivos
+
 console.log("Bienvenidas al gestor de tareas");
 
 // Declarar la estructura de una tarea usando una interfaz
@@ -10,6 +12,19 @@ interface Task {
 
 // Array para almacenar las tareas
 let tasks: Task[] = [];
+
+// Función para cargar las tareas desde el archivo tasks.json
+
+function loadTasks(): void {
+  if (fs.existsSync("tasks.json")) {
+    //Comprueba que el archivo tasks json existe
+    const data = fs.readFileSync("tasks.json", "utf-8"); //lee el archivo como un texto
+    tasks = JSON.parse(data); // convierte el texto JSON en un array de tareas
+    console.log("tareas cargadas", tasks);
+  } else {
+    console.log("no se encontró el archivo tasks.json, se creará uno nuevo ");
+  }
+}
 
 // Función para añadir uan nueva tarea
 function addTask(name: string): void {
