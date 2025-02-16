@@ -32,6 +32,9 @@ function saveTasks(): void {
   console.log("tareas guardadas en tasks.json");
 }
 
+//Llamar a LoadTasks al inicio del programa para cargar las tareas
+loadTasks();
+
 // Función para añadir uan nueva tarea
 function addTask(name: string): void {
   const newTask: Task = {
