@@ -63,6 +63,7 @@ function completeTask(id: number): void {
   if (task) {
     task.completed = true;
     console.log(`tarea completada:) ${task.name}`);
+    saveTasks(); //Guardar las tareas después de marcar una completada
   } else {
     console.log(`tarea con ID ${id} no encontrada`);
   }
@@ -80,6 +81,7 @@ function deleteTask(id: number): void {
   if (taskIndex !== -1) {
     const deletedTask = tasks.splice(taskIndex, 1);
     console.log(`Tarea eliminada: ${deletedTask[0].name}`);
+    saveTasks(); // guardar las tareas despues de eliminar una
   } else {
     console.log(`Tarea con ID ${id} no encontrada.`);
   }
