@@ -11,3 +11,6 @@ function inicializarRover(x, y, direccion, tamañoMapa, obstaculos = []) {
 
 // Crear un Rover en (0,0), mirando al Norte ('N'), en un mapa de 5x5 con un obstáculo en (2,2)
 let rover = inicializarRover(0, 0, "N", [5, 5], [{ x: 2, y: 2 }]);
+
+// Mostrar en pantalla la información del Rover
+console.log(rover);
