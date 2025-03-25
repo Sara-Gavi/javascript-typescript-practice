@@ -19,4 +19,21 @@ function generarResumen(visitas) {
     tipos: {},
     conIncidencias: 0,
   };
+
+  visitas.forEach((v) => {
+    resumen.tipos[v.tipo] = (resumen.tipos[v.tipo] || 0) + 1;
+    if (v.incidencia) resumen.conIncidencias++;
+  });
+  return resumen;
 }
+
+// mostrar resumen en consola
+const resultado = generarResumen(visitas);
+
+console.log("resumen de visitas tecnicas:");
+console.log(`Total de visitas: ${resultado.total}`);
+console.log("Por tipo de instalación:");
+for (let tipo in resultado.tipos) {
+  console.log(`-${tipo}: ${resultado.tipos[tipo]}`);
+}
+console.log(`Con incidencia: ${resultado.conIncidencias}`);
