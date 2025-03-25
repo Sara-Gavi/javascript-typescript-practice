@@ -10,3 +10,13 @@ const visitas = [
   { cliente: "Pedro Duque", tipo: "Fotovoltaica", incidencia: true },
   { cliente: "Lucía Montañas", tipo: "Mantenimiento", incidencia: false },
 ];
+
+// Funcion para generar el resumen automático de las visitas
+
+function generarResumen(visitas) {
+  const resumen = {
+    total: visitas.length,
+    tipos: {},
+    conIncidencias: 0,
+  };
+}
